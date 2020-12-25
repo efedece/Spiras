@@ -1,0 +1,888 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		655744FB25965CF7007E1468 /* SpirasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655744FA25965CF7007E1468 /* SpirasApp.swift */; };
+		655744FD25965CF7007E1468 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655744FC25965CF7007E1468 /* ContentView.swift */; };
+		655744FF25965CFC007E1468 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 655744FE25965CFC007E1468 /* Assets.xcassets */; };
+		6557450225965CFC007E1468 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6557450125965CFC007E1468 /* Preview Assets.xcassets */; };
+		6557450D25965CFD007E1468 /* SpirasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557450C25965CFD007E1468 /* SpirasTests.swift */; };
+		6557451825965CFD007E1468 /* SpirasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557451725965CFD007E1468 /* SpirasUITests.swift */; };
+		6557451D25965CFD007E1468 /* Spiras WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6557451C25965CFD007E1468 /* Spiras WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6557452225965D00007E1468 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6557452125965D00007E1468 /* Assets.xcassets */; };
+		6557452925965D00007E1468 /* Spiras WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6557452825965D00007E1468 /* Spiras WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6557452E25965D00007E1468 /* SpirasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557452D25965D00007E1468 /* SpirasApp.swift */; };
+		6557453025965D00007E1468 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557452F25965D00007E1468 /* ContentView.swift */; };
+		6557453225965D00007E1468 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557453125965D00007E1468 /* NotificationController.swift */; };
+		6557453425965D00007E1468 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557453325965D00007E1468 /* NotificationView.swift */; };
+		6557453625965D00007E1468 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557453525965D00007E1468 /* ComplicationController.swift */; };
+		6557453825965D03007E1468 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6557453725965D03007E1468 /* Assets.xcassets */; };
+		6557453B25965D03007E1468 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6557453A25965D03007E1468 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6557450925965CFD007E1468 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 655744EF25965CF7007E1468 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 655744F625965CF7007E1468;
+			remoteInfo = Spiras;
+		};
+		6557451425965CFD007E1468 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 655744EF25965CF7007E1468 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 655744F625965CF7007E1468;
+			remoteInfo = Spiras;
+		};
+		6557451E25965CFD007E1468 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 655744EF25965CF7007E1468 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6557451B25965CFD007E1468;
+			remoteInfo = "Spiras WatchKit App";
+		};
+		6557452A25965D00007E1468 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 655744EF25965CF7007E1468 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6557452725965D00007E1468;
+			remoteInfo = "Spiras WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6557454325965D03007E1468 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6557452925965D00007E1468 /* Spiras WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6557454725965D03007E1468 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				6557451D25965CFD007E1468 /* Spiras WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		655744F725965CF7007E1468 /* Spiras.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spiras.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		655744FA25965CF7007E1468 /* SpirasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpirasApp.swift; sourceTree = "<group>"; };
+		655744FC25965CF7007E1468 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		655744FE25965CFC007E1468 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6557450125965CFC007E1468 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6557450325965CFC007E1468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6557450825965CFD007E1468 /* SpirasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpirasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6557450C25965CFD007E1468 /* SpirasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpirasTests.swift; sourceTree = "<group>"; };
+		6557450E25965CFD007E1468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6557451325965CFD007E1468 /* SpirasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpirasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6557451725965CFD007E1468 /* SpirasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpirasUITests.swift; sourceTree = "<group>"; };
+		6557451925965CFD007E1468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6557451C25965CFD007E1468 /* Spiras WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spiras WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6557452125965D00007E1468 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6557452325965D00007E1468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6557452825965D00007E1468 /* Spiras WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Spiras WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6557452D25965D00007E1468 /* SpirasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpirasApp.swift; sourceTree = "<group>"; };
+		6557452F25965D00007E1468 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6557453125965D00007E1468 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		6557453325965D00007E1468 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		6557453525965D00007E1468 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		6557453725965D03007E1468 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6557453A25965D03007E1468 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6557453C25965D03007E1468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6557453D25965D03007E1468 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		655744F425965CF7007E1468 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6557450525965CFD007E1468 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6557451025965CFD007E1468 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6557452525965D00007E1468 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		655744EE25965CF7007E1468 = {
+			isa = PBXGroup;
+			children = (
+				655744F925965CF7007E1468 /* Spiras */,
+				6557450B25965CFD007E1468 /* SpirasTests */,
+				6557451625965CFD007E1468 /* SpirasUITests */,
+				6557452025965CFD007E1468 /* Spiras WatchKit App */,
+				6557452C25965D00007E1468 /* Spiras WatchKit Extension */,
+				655744F825965CF7007E1468 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		655744F825965CF7007E1468 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				655744F725965CF7007E1468 /* Spiras.app */,
+				6557450825965CFD007E1468 /* SpirasTests.xctest */,
+				6557451325965CFD007E1468 /* SpirasUITests.xctest */,
+				6557451C25965CFD007E1468 /* Spiras WatchKit App.app */,
+				6557452825965D00007E1468 /* Spiras WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		655744F925965CF7007E1468 /* Spiras */ = {
+			isa = PBXGroup;
+			children = (
+				655744FA25965CF7007E1468 /* SpirasApp.swift */,
+				655744FC25965CF7007E1468 /* ContentView.swift */,
+				655744FE25965CFC007E1468 /* Assets.xcassets */,
+				6557450325965CFC007E1468 /* Info.plist */,
+				6557450025965CFC007E1468 /* Preview Content */,
+			);
+			path = Spiras;
+			sourceTree = "<group>";
+		};
+		6557450025965CFC007E1468 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6557450125965CFC007E1468 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6557450B25965CFD007E1468 /* SpirasTests */ = {
+			isa = PBXGroup;
+			children = (
+				6557450C25965CFD007E1468 /* SpirasTests.swift */,
+				6557450E25965CFD007E1468 /* Info.plist */,
+			);
+			path = SpirasTests;
+			sourceTree = "<group>";
+		};
+		6557451625965CFD007E1468 /* SpirasUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6557451725965CFD007E1468 /* SpirasUITests.swift */,
+				6557451925965CFD007E1468 /* Info.plist */,
+			);
+			path = SpirasUITests;
+			sourceTree = "<group>";
+		};
+		6557452025965CFD007E1468 /* Spiras WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				6557452125965D00007E1468 /* Assets.xcassets */,
+				6557452325965D00007E1468 /* Info.plist */,
+			);
+			path = "Spiras WatchKit App";
+			sourceTree = "<group>";
+		};
+		6557452C25965D00007E1468 /* Spiras WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6557452D25965D00007E1468 /* SpirasApp.swift */,
+				6557452F25965D00007E1468 /* ContentView.swift */,
+				6557453125965D00007E1468 /* NotificationController.swift */,
+				6557453325965D00007E1468 /* NotificationView.swift */,
+				6557453525965D00007E1468 /* ComplicationController.swift */,
+				6557453725965D03007E1468 /* Assets.xcassets */,
+				6557453C25965D03007E1468 /* Info.plist */,
+				6557453D25965D03007E1468 /* PushNotificationPayload.apns */,
+				6557453925965D03007E1468 /* Preview Content */,
+			);
+			path = "Spiras WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		6557453925965D03007E1468 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6557453A25965D03007E1468 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		655744F625965CF7007E1468 /* Spiras */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6557454825965D03007E1468 /* Build configuration list for PBXNativeTarget "Spiras" */;
+			buildPhases = (
+				655744F325965CF7007E1468 /* Sources */,
+				655744F425965CF7007E1468 /* Frameworks */,
+				655744F525965CF7007E1468 /* Resources */,
+				6557454725965D03007E1468 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6557451F25965CFD007E1468 /* PBXTargetDependency */,
+			);
+			name = Spiras;
+			productName = Spiras;
+			productReference = 655744F725965CF7007E1468 /* Spiras.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6557450725965CFD007E1468 /* SpirasTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6557454B25965D03007E1468 /* Build configuration list for PBXNativeTarget "SpirasTests" */;
+			buildPhases = (
+				6557450425965CFD007E1468 /* Sources */,
+				6557450525965CFD007E1468 /* Frameworks */,
+				6557450625965CFD007E1468 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6557450A25965CFD007E1468 /* PBXTargetDependency */,
+			);
+			name = SpirasTests;
+			productName = SpirasTests;
+			productReference = 6557450825965CFD007E1468 /* SpirasTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6557451225965CFD007E1468 /* SpirasUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6557454E25965D03007E1468 /* Build configuration list for PBXNativeTarget "SpirasUITests" */;
+			buildPhases = (
+				6557450F25965CFD007E1468 /* Sources */,
+				6557451025965CFD007E1468 /* Frameworks */,
+				6557451125965CFD007E1468 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6557451525965CFD007E1468 /* PBXTargetDependency */,
+			);
+			name = SpirasUITests;
+			productName = SpirasUITests;
+			productReference = 6557451325965CFD007E1468 /* SpirasUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		6557451B25965CFD007E1468 /* Spiras WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6557454425965D03007E1468 /* Build configuration list for PBXNativeTarget "Spiras WatchKit App" */;
+			buildPhases = (
+				6557451A25965CFD007E1468 /* Resources */,
+				6557454325965D03007E1468 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6557452B25965D00007E1468 /* PBXTargetDependency */,
+			);
+			name = "Spiras WatchKit App";
+			productName = "Spiras WatchKit App";
+			productReference = 6557451C25965CFD007E1468 /* Spiras WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		6557452725965D00007E1468 /* Spiras WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6557454025965D03007E1468 /* Build configuration list for PBXNativeTarget "Spiras WatchKit Extension" */;
+			buildPhases = (
+				6557452425965D00007E1468 /* Sources */,
+				6557452525965D00007E1468 /* Frameworks */,
+				6557452625965D00007E1468 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Spiras WatchKit Extension";
+			productName = "Spiras WatchKit Extension";
+			productReference = 6557452825965D00007E1468 /* Spiras WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		655744EF25965CF7007E1468 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					655744F625965CF7007E1468 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					6557450725965CFD007E1468 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 655744F625965CF7007E1468;
+					};
+					6557451225965CFD007E1468 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 655744F625965CF7007E1468;
+					};
+					6557451B25965CFD007E1468 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					6557452725965D00007E1468 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 655744F225965CF7007E1468 /* Build configuration list for PBXProject "Spiras" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 655744EE25965CF7007E1468;
+			productRefGroup = 655744F825965CF7007E1468 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				655744F625965CF7007E1468 /* Spiras */,
+				6557450725965CFD007E1468 /* SpirasTests */,
+				6557451225965CFD007E1468 /* SpirasUITests */,
+				6557451B25965CFD007E1468 /* Spiras WatchKit App */,
+				6557452725965D00007E1468 /* Spiras WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		655744F525965CF7007E1468 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6557450225965CFC007E1468 /* Preview Assets.xcassets in Resources */,
+				655744FF25965CFC007E1468 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6557450625965CFD007E1468 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6557451125965CFD007E1468 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6557451A25965CFD007E1468 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6557452225965D00007E1468 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6557452625965D00007E1468 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6557453B25965D03007E1468 /* Preview Assets.xcassets in Resources */,
+				6557453825965D03007E1468 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		655744F325965CF7007E1468 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				655744FD25965CF7007E1468 /* ContentView.swift in Sources */,
+				655744FB25965CF7007E1468 /* SpirasApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6557450425965CFD007E1468 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6557450D25965CFD007E1468 /* SpirasTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6557450F25965CFD007E1468 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6557451825965CFD007E1468 /* SpirasUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6557452425965D00007E1468 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6557453225965D00007E1468 /* NotificationController.swift in Sources */,
+				6557453025965D00007E1468 /* ContentView.swift in Sources */,
+				6557453625965D00007E1468 /* ComplicationController.swift in Sources */,
+				6557452E25965D00007E1468 /* SpirasApp.swift in Sources */,
+				6557453425965D00007E1468 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6557450A25965CFD007E1468 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 655744F625965CF7007E1468 /* Spiras */;
+			targetProxy = 6557450925965CFD007E1468 /* PBXContainerItemProxy */;
+		};
+		6557451525965CFD007E1468 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 655744F625965CF7007E1468 /* Spiras */;
+			targetProxy = 6557451425965CFD007E1468 /* PBXContainerItemProxy */;
+		};
+		6557451F25965CFD007E1468 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6557451B25965CFD007E1468 /* Spiras WatchKit App */;
+			targetProxy = 6557451E25965CFD007E1468 /* PBXContainerItemProxy */;
+		};
+		6557452B25965D00007E1468 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6557452725965D00007E1468 /* Spiras WatchKit Extension */;
+			targetProxy = 6557452A25965D00007E1468 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6557453E25965D03007E1468 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6557453F25965D03007E1468 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		6557454125965D03007E1468 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Spiras WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = TSWK3A286D;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Spiras WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = efedece.Spiras.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		6557454225965D03007E1468 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Spiras WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = TSWK3A286D;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Spiras WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = efedece.Spiras.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		6557454525965D03007E1468 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TSWK3A286D;
+				IBSC_MODULE = Spiras_WatchKit_Extension;
+				INFOPLIST_FILE = "Spiras WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = efedece.Spiras.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		6557454625965D03007E1468 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TSWK3A286D;
+				IBSC_MODULE = Spiras_WatchKit_Extension;
+				INFOPLIST_FILE = "Spiras WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = efedece.Spiras.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		6557454925965D03007E1468 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Spiras/Preview Content\"";
+				DEVELOPMENT_TEAM = TSWK3A286D;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Spiras/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = efedece.Spiras;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6557454A25965D03007E1468 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Spiras/Preview Content\"";
+				DEVELOPMENT_TEAM = TSWK3A286D;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Spiras/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = efedece.Spiras;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6557454C25965D03007E1468 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TSWK3A286D;
+				INFOPLIST_FILE = SpirasTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = efedece.SpirasTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spiras.app/Spiras";
+			};
+			name = Debug;
+		};
+		6557454D25965D03007E1468 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TSWK3A286D;
+				INFOPLIST_FILE = SpirasTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = efedece.SpirasTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spiras.app/Spiras";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6557454F25965D03007E1468 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TSWK3A286D;
+				INFOPLIST_FILE = SpirasUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = efedece.SpirasUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Spiras;
+			};
+			name = Debug;
+		};
+		6557455025965D03007E1468 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TSWK3A286D;
+				INFOPLIST_FILE = SpirasUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = efedece.SpirasUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Spiras;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		655744F225965CF7007E1468 /* Build configuration list for PBXProject "Spiras" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6557453E25965D03007E1468 /* Debug */,
+				6557453F25965D03007E1468 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6557454025965D03007E1468 /* Build configuration list for PBXNativeTarget "Spiras WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6557454125965D03007E1468 /* Debug */,
+				6557454225965D03007E1468 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6557454425965D03007E1468 /* Build configuration list for PBXNativeTarget "Spiras WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6557454525965D03007E1468 /* Debug */,
+				6557454625965D03007E1468 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6557454825965D03007E1468 /* Build configuration list for PBXNativeTarget "Spiras" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6557454925965D03007E1468 /* Debug */,
+				6557454A25965D03007E1468 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6557454B25965D03007E1468 /* Build configuration list for PBXNativeTarget "SpirasTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6557454C25965D03007E1468 /* Debug */,
+				6557454D25965D03007E1468 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6557454E25965D03007E1468 /* Build configuration list for PBXNativeTarget "SpirasUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6557454F25965D03007E1468 /* Debug */,
+				6557455025965D03007E1468 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 655744EF25965CF7007E1468 /* Project object */;
+}
