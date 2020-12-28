@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct SpirasApp: App {
+    @ObservedObject private var data = RoutineData()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                RoutinesMenuView(routines: $data.routines) {
+                    data.save()
+                }
+            }
+            .onAppear {
+                data.load()
+            }
         }
     }
 }
