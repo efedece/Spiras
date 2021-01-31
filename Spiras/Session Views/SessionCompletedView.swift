@@ -19,12 +19,13 @@ struct SessionCompletedView: View {
     var body: some View {
         VStack {
             Text("Session completed 🎉")
-                .font(.system(size:Constants.superLargeFont))
-                .fontWeight(.bold)
+                .font(.system(size:Constants.veryLargeFont))
+                .fontWeight(.semibold)
                 .foregroundColor(.white)
                 .padding()
             Text("You finished your breathe cycle session")
-                .fontWeight(.bold)
+                .font(.system(size: Constants.mediumFont))
+                .fontWeight(.semibold)
                 .foregroundColor(.white)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -64,6 +64,8 @@ struct RoutinesMenuCardView: View {
             .environment(\.editMode, $editMode)
         }
         .padding()
+//        .background(Color("1-Vivid Sky Blue"))
+        .environment(\.colorScheme, .dark)        
     }
 }
 

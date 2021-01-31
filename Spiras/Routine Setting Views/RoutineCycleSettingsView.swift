@@ -30,7 +30,10 @@ struct RoutineCycleSettingsView: View {
         GeometryReader { geometry in
             HStack(spacing: Constants.smallSpacing) {
                 VStack {
-                    Text("Breathe In").font(.system(size: Constants.smallFont)).multilineTextAlignment(.center)
+                    Text("Breathe In")
+                        .font(.system(size: Constants.smallFont))
+//                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
                     Picker(selection: $breatheIn, label: Text("")) {
                         ForEach(0 ..< timerRange.count) { Text("\(timerRange[$0])") .font(.system(size: Constants.smallFont)) }
                     }
@@ -43,7 +46,10 @@ struct RoutineCycleSettingsView: View {
                     .clipped()
                 }
                 VStack {
-                    Text("Hold In").font(.system(size: Constants.smallFont)).multilineTextAlignment(.center)
+                    Text("Hold In")
+                        .font(.system(size: Constants.smallFont))
+//                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
                     Picker(selection: $holdIn, label: Text("")) {
                         ForEach(0 ..< timerRange.count) { Text("\(timerRange[$0])") .font(.system(size: Constants.smallFont)) }
                     }
@@ -56,7 +62,10 @@ struct RoutineCycleSettingsView: View {
                     .clipped()
                 }
                 VStack {
-                    Text("Breathe Out").font(.system(size: Constants.smallFont)).multilineTextAlignment(.center)
+                    Text("Breathe Out")
+                        .font(.system(size: Constants.smallFont))
+//                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
                     Picker(selection: $breatheOut, label: Text("")) {
                         ForEach(0 ..< timerRange.count) { Text("\(timerRange[$0])") .font(.system(size: Constants.smallFont)) }
                     }
@@ -69,7 +78,10 @@ struct RoutineCycleSettingsView: View {
                     .clipped()
                 }
                 VStack {
-                    Text("Hold Out").font(.system(size: Constants.smallFont)).multilineTextAlignment(.center)
+                    Text("Hold Out")
+                        .font(.system(size: Constants.smallFont))
+//                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
                     Picker(selection: $holdOut, label: Text("")) {
                         ForEach(0 ..< timerRange.count) { Text("\(timerRange[$0])") .font(.system(size: Constants.smallFont)) }
                     }

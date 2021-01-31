@@ -13,10 +13,10 @@ import AVFoundation
 // MARK: - Drawing Constants
 enum Constants {
 // Fonts
-    static let smallFont: CGFloat = 11
-    static let mediumFont: CGFloat = 15
+    static let smallFont: CGFloat = 15
+    static let mediumFont: CGFloat = 18
     static let largeFont: CGFloat = 30
-    static let superLargeFont: CGFloat = 50
+    static let veryLargeFont: CGFloat = 50
     
 // Spacing
     static let verySmallSpacing: CGFloat = 5

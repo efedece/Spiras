@@ -46,7 +46,8 @@ struct RoutineOtherSettingsView: View {
                         .frame(maxWidth: UIScreen.main.bounds.width/2 - Constants.verySmallSpacing)
                 }
                 VStack {
-                    Text("Session length").font(.system(size: Constants.smallFont))
+                    Text("Session length")
+                        .font(.system(size: Constants.smallFont))
                         .multilineTextAlignment(.center)
                         .padding(.bottom, Constants.smallSpacing)
                     Text(secondsToMinutesAndSeconds(sessionLength))

@@ -27,7 +27,15 @@ struct SessionView: View {
 
     var body: some View {
         ZStack {
+            // Cycle step description
             VStack(alignment: .center, spacing: Constants.mediumSpacing){
+                Text("\(sessionTimer.cycleStep.description)")
+                    .font(.system(size: Constants.veryLargeFont))
+                    .fontWeight(.semibold)
+                    .padding(.top, Constants.veryLargeSpacing)
+                    .padding(.bottom, Constants.mediumSpacing)
+                
+                // Cycle animation
                 ZStack {
                     Circle()
                         .trim(from: 0, to: 1)
@@ -38,23 +46,27 @@ struct SessionView: View {
                         .stroke(sessionTimer.cycleColor, style: StrokeStyle(lineWidth: Constants.timerCircleLineWidth, lineCap: .round))
                         .frame(width: Constants.timerCircleDimensions, height: Constants.timerCircleDimensions)
                         .rotationEffect(.init(degrees: -90))
+                    // Seconds left in cycle step
                     VStack{
                         Text(secondsToMinutesAndSeconds(Int(sessionTimer.secondsLeftStep.rounded(.up))))
-                            .font(.system(size: Constants.superLargeFont))
+                            .font(.system(size: Constants.veryLargeFont))
                             .fontWeight(.bold)
                             .padding(.vertical, Constants.smallSpacing)
-                        Text("\(sessionTimer.cycleStep.description)")
-                            .font(.system(size: Constants.largeFont))
-                            .fontWeight(.semibold)
                     }
                 }
-                .padding(.top, Constants.veryLargeSpacing)
+                .padding(.vertical, Constants.veryLargeSpacing)
+                
+                // Pause button
+                SessionButtonsView(timerMode: $sessionTimer.timerState)
+                    .padding(.vertical, Constants.mediumSpacing)
+                
+                // Session details
                 HStack(spacing: Constants.mediumSpacing) {
                     VStack {
                         Text("Time left:")
                             .font(.system(size: Constants.mediumFont))
                             .fontWeight(.semibold)
-                        Text("\(secondsToMinutesAndSeconds(Int(sessionTimer.secondsLeftSession.rounded(.up))))") 
+                        Text("\(secondsToMinutesAndSeconds(Int(sessionTimer.secondsLeftSession.rounded(.up))))")
                             .font(.system(size: Constants.mediumFont))
                     }
                     .frame(width: (UIScreen.main.bounds.width / 2) - Constants.veryLargeSpacing)
@@ -68,20 +80,24 @@ struct SessionView: View {
                     }
                     .frame(width: (UIScreen.main.bounds.width / 2) - Constants.veryLargeSpacing)
                 }
-                .padding(.top, Constants.veryLargeSpacing)
-                
-                SessionButtonsView(timerMode: $sessionTimer.timerState)
+//                .padding(.top, Constants.veryLargeSpacing)
             }
+            
+            // Show session completed view on timer end
             if sessionTimer.timerState == .finished {
                 SessionCompletedView()
             }
         }
+        
+        // Begin timer
         .onAppear {
             if sessionTimer.timerState == .notSet { //FIXME: Correguir para que no se reinicie
                 sessionTimer.setTimer(breatheIn: breatheIn, holdIn: holdIn, breatheOut: breatheOut, holdOut: holdOut, numberOfCycles: Int(numberOfCycles),  vibrationOn: vibrationOn, soundOn: soundOn)
             }
             sessionTimer.timerState = .paused
         }
+        
+        // Update timer state
         .onChange(of: sessionTimer.timerState, perform: { value in
             if sessionTimer.timerState == .paused {
                 sessionTimer.run()
@@ -91,12 +107,12 @@ struct SessionView: View {
         })
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .edgesIgnoringSafeArea(.all)
-        .background(Color(UIColor.systemBackground))
+        .background(Color("1-Vivid Sky Blue"))
             .edgesIgnoringSafeArea(.all)
         .environment(\.colorScheme, .dark)
         .onTapGesture {
             sessionTimer.timerState = .paused
-            presentationMode.wrappedValue.dismiss()
+            presentationMode.wrappedValue.dismiss() //FIXME: Correguir para que no se reinicie
         }
     }
 }

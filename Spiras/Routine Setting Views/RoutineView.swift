@@ -24,6 +24,7 @@ struct RoutineView: View {
             // Settings
             Text("BREATHE CYCLE SETTINGS")
                 .font(.system(size: Constants.mediumFont))
+                .fontWeight(.bold)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .padding(.vertical, Constants.largeSpacing)
@@ -37,11 +38,12 @@ struct RoutineView: View {
             
             // Action Button
             RoutineButtonsView(breatheIn: $routine.breatheIn, holdIn: $routine.holdIn, breatheOut: $routine.breatheOut, holdOut: $routine.holdOut, numberOfCycles: $routine.numberOfCycles, vibrationOn: $routine.vibrationOn, soundOn: $routine.soundOn)
+                .padding(.top, Constants.mediumSpacing)
         }
         .navigationBarTitle("\(routine.title)",  displayMode: .inline)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .edgesIgnoringSafeArea(.all)
-        .background(Color(UIColor.systemBackground))
+        .background(Color("1-Vivid Sky Blue"))
             .edgesIgnoringSafeArea(.all)
         .environment(\.colorScheme, .dark)
     }

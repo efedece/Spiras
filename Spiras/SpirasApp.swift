@@ -16,6 +16,7 @@ struct SpirasApp: App {
         WindowGroup {
             NavigationView {
                 RoutinesMenuView(routines: $data.routines) {
+                    // Save data on changes
                     data.save()
                 }
             }
@@ -30,10 +31,10 @@ struct SpirasApp: App {
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        // Change navigation bar
+        // Change navigation bar appearance
         let coloredAppearance = UINavigationBarAppearance()
         coloredAppearance.configureWithOpaqueBackground()
-        coloredAppearance.backgroundColor = UIColor(Color("7-Purple"))
+        coloredAppearance.backgroundColor = UIColor(Color("3-Ultramarine Blue"))
         coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
                
