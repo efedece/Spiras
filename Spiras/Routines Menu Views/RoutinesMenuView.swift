@@ -29,15 +29,15 @@ struct RoutinesMenuView: View {
                 {
                     RoutinesMenuCardView(routine: binding(for: routine), routineTitle: routine.title, editMode: $editMode) { saveAction() }
                 }
-//                .foregroundColor(Color("3-Ultramarine Blue"))
-//                .listRowBackground(Color("1-Vivid Sky Blue"))
+//                .foregroundColor(Color(" "))
+//                .listRowBackground(Color(" "))
             }
             .onDelete { indexSet in
                 routines.remove(atOffsets: indexSet)
                 saveAction()
             }
         }
-        .navigationBarTitle("Spiras Routines",  displayMode: .inline)
+        .navigationBarTitle("𝞭𝚽𝚪𝚫𝞭",  displayMode: .inline)
         .navigationBarItems(
             leading:
                 Button(

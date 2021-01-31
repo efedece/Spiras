@@ -92,6 +92,7 @@ struct SessionView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .edgesIgnoringSafeArea(.all)
         .background(Color(UIColor.systemBackground))
+            .edgesIgnoringSafeArea(.all)
         .environment(\.colorScheme, .dark)
         .onTapGesture {
             sessionTimer.timerState = .paused

@@ -42,6 +42,7 @@ struct RoutineView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .edgesIgnoringSafeArea(.all)
         .background(Color(UIColor.systemBackground))
+            .edgesIgnoringSafeArea(.all)
         .environment(\.colorScheme, .dark)
     }
 }

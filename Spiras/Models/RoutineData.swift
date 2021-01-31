@@ -53,18 +53,4 @@ class RoutineData: ObservableObject {
             }
         }
     }
-    
-    func remove(_ routine: [SingleRoutine]) {
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            //guard let routines = self?.routines else { fatalError("Self out of scope") }
-            //guard let data = try? JSONEncoder().encode(routines) else { fatalError("Error encoding data") }
-            do {
-                let outfile = Self.fileURL
-                try FileManager.default.removeItem(at: outfile)
-                //self.routines[routine] = nil
-            } catch {
-                fatalError("Can't remove file")
-            }
-        }
-    }
 }
