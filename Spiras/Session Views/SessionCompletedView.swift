@@ -25,7 +25,7 @@ struct SessionCompletedView: View {
             Text("You finished your breathe cycle session")
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("background5"))
+        .background(Color("1-Vivid Sky Blue"))
         .edgesIgnoringSafeArea(.all)
         .onTapGesture {
             presentationMode.wrappedValue.dismiss()

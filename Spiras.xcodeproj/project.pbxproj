@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		651376F7259D3AEE009735D1 /* bong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 651376F6259D3AEE009735D1 /* bong.wav */; };
 		6513B3FB2599578900E42E3C /* SessionButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6513B3FA2599578900E42E3C /* SessionButtonsView.swift */; };
 		6513B4022599653800E42E3C /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6513B4012599653800E42E3C /* SessionView.swift */; };
 		6513B44B2599695D00E42E3C /* SessionCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6513B44A2599695D00E42E3C /* SessionCompletedView.swift */; };
@@ -99,6 +100,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		651376F6259D3AEE009735D1 /* bong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bong.wav; sourceTree = "<group>"; };
+		651376FD259D3B22009735D1 /* om.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = om.flac; sourceTree = "<group>"; };
 		6513B3FA2599578900E42E3C /* SessionButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionButtonsView.swift; sourceTree = "<group>"; };
 		6513B4012599653800E42E3C /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		6513B44A2599695D00E42E3C /* SessionCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCompletedView.swift; sourceTree = "<group>"; };
@@ -314,6 +317,8 @@
 		655C70D925965DA3008483B3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				651376FD259D3B22009735D1 /* om.flac */,
+				651376F6259D3AEE009735D1 /* bong.wav */,
 				655C70DA25965DA3008483B3 /* ding.wav */,
 			);
 			path = Resources;
@@ -469,6 +474,7 @@
 			files = (
 				655C70DB25965DA3008483B3 /* ding.wav in Resources */,
 				6557450225965CFC007E1468 /* Preview Assets.xcassets in Resources */,
+				651376F7259D3AEE009735D1 /* bong.wav in Resources */,
 				655744FF25965CFC007E1468 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -803,7 +809,7 @@
 		6557454925965D03007E1468 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Spiral AppIcon";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Spiras/Preview Content\"";
@@ -826,7 +832,7 @@
 		6557454A25965D03007E1468 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Spiral AppIcon";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Spiras/Preview Content\"";

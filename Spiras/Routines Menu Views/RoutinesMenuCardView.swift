@@ -8,22 +8,25 @@
 import SwiftUI
 
 struct RoutineMenuCardView_Previews: PreviewProvider {
-    static var routine = SingleRoutine.data[0]
     static var previews: some View {
-        RoutinesMenuCardView(routine: routine)
+        RoutinesMenuCardView(routine: .constant(SingleRoutine.data[0]), routineTitle: SingleRoutine.data[0].title, editMode: .constant(.inactive), saveAction: {})
             .previewLayout(.fixed(width: UIScreen.main.bounds.width, height: 100))
     }
 }
 
 struct RoutinesMenuCardView: View {
-    
-    @State private var editMode: EditMode = .inactive
-    
-    let routine: SingleRoutine
+    @Binding var routine: SingleRoutine
+    @State var routineTitle: String = ""
+    @Binding var editMode: EditMode
+    let saveAction: () -> Void
+
     var body: some View {
         VStack(alignment: .leading) {
-            EditableText(routine.title, isEditing: editMode.isEditing) {_ in
+            EditableText(routineTitle, isEditing: editMode.isEditing) { title in
+                routine.title = title
+                routineTitle = title
                 editMode = .inactive
+                saveAction()
             }
                 .font(.system(size: Constants.largeFont))
             Spacer()
@@ -52,14 +55,13 @@ struct RoutinesMenuCardView: View {
                 Spacer()
                 HStack {
                     Image(systemName: routine.vibrationOn ? "iphone.radiowaves.left.and.right" : "iphone.slash")
-                        .padding(10)
                     Image(systemName: routine.soundOn ? "speaker.wave.3.fill" : "speaker.slash.fill")
-                        .padding(10)
                 }
                 Spacer()
             }
             .imageScale(.medium)
             .font(.system(size: Constants.mediumFont))
+            .environment(\.editMode, $editMode)
         }
         .padding()
     }

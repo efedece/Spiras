@@ -9,11 +9,10 @@ import SwiftUI
 
 struct RoutineOtherSettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        RoutineOtherSettingsView(breatheIn: .constant(SingleRoutine.data[0].data.breatheIn), holdIn: .constant(SingleRoutine.data[0].data.holdIn), breatheOut: .constant(SingleRoutine.data[0].data.breatheOut), holdOut: .constant(SingleRoutine.data[0].data.holdOut),  cycleLength: .constant(SingleRoutine.data[0].data.cycleLength), numberOfCycles: .constant(SingleRoutine.data[0].data.numberOfCycles), sessionLength: .constant(SingleRoutine.data[0].data.sessionLength),vibrationOn: .constant(SingleRoutine.data[0].data.vibrationOn), soundOn: .constant(SingleRoutine.data[0].data.soundOn))
+        RoutineOtherSettingsView(breatheIn: .constant(SingleRoutine.data[0].data.breatheIn), holdIn: .constant(SingleRoutine.data[0].data.holdIn), breatheOut: .constant(SingleRoutine.data[0].data.breatheOut), holdOut: .constant(SingleRoutine.data[0].data.holdOut),  cycleLength: .constant(SingleRoutine.data[0].data.cycleLength), numberOfCycles: .constant(SingleRoutine.data[0].data.numberOfCycles), sessionLength: .constant(SingleRoutine.data[0].data.sessionLength),vibrationOn: .constant(SingleRoutine.data[0].data.vibrationOn), soundOn: .constant(SingleRoutine.data[0].data.soundOn), saveAction: {})
             .previewLayout(.fixed(width: .infinity, height: 200))
     }
 }
-
 
 struct RoutineOtherSettingsView: View {
     @Binding var breatheIn: Int
@@ -25,6 +24,8 @@ struct RoutineOtherSettingsView: View {
     @Binding var sessionLength: Int
     @Binding var vibrationOn: Bool
     @Binding var soundOn: Bool
+    let saveAction: () -> Void
+
     var body: some View {
         VStack{
             HStack(spacing: Constants.largeSpacing) {
@@ -39,6 +40,7 @@ struct RoutineOtherSettingsView: View {
                     Slider(value: $numberOfCycles, in: 1...30.0, step: 1.0)
                         .onChange(of: numberOfCycles, perform: { value in
                             sessionLength = cycleLength * Int (numberOfCycles)
+                            saveAction()
                         })
                         .clipped()
                         .frame(maxWidth: UIScreen.main.bounds.width/2 - Constants.verySmallSpacing)
@@ -56,7 +58,10 @@ struct RoutineOtherSettingsView: View {
             .padding(.bottom, Constants.mediumSpacing)
             
             HStack {
-                Button(action: { vibrationOn.toggle() }) {
+                Button(action: {
+                    vibrationOn.toggle()
+                    saveAction()
+                }) {
                     HStack(spacing: Constants.verySmallSpacing) {
                         Text("Vibration:")
                             .font(.system(size: Constants.mediumFont))
@@ -67,7 +72,10 @@ struct RoutineOtherSettingsView: View {
                     .padding(.vertical)
                     .frame(width: UIScreen.main.bounds.width/2   - Constants.veryLargeSpacing)
                 }
-                Button(action: { soundOn.toggle() }) {
+                Button(action: {
+                    soundOn.toggle()
+//                    saveAction()
+                }) {
                     HStack(spacing: Constants.verySmallSpacing) {
                         Text("Sound:")
                             .font(.system(size: Constants.mediumFont))

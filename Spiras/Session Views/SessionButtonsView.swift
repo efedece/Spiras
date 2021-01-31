@@ -9,55 +9,48 @@ import SwiftUI
 
 struct SessionButtonsView_Previews: PreviewProvider {
     static var previews: some View {
-        SessionButtonsView()
+        SessionButtonsView(timerMode: .constant(.running))
             .previewLayout(.fixed(width: .infinity, height: 100))
     }
 }
 
 struct SessionButtonsView: View {
-//    $timer: SessionTimer
+    @Binding var timerMode: TimerMode
+
     var body: some View {
         HStack(spacing: Constants.mediumSpacing) {
             // Play - Pause Button
             Button(action: {
-//                if exercisePlan.timerMode == .notRunning {
-//                    exercisePlan.setTimerLength(numberOfCycles: exercisePlan.settingsVars.numberOfCycles, breatheIn: exercisePlan.settingsVars.breatheIn, holdIn: exercisePlan.settingsVars.holdIn, breatheOut: exercisePlan.settingsVars.breatheOut, holdOut: exercisePlan.settingsVars.holdOut)
-//                }
-//                exercisePlan.timerMode == .running ? exercisePlan.pause() : exercisePlan.start()
+                if timerMode == .running { timerMode = .paused } else { timerMode = .running }
             }) {
                 HStack(spacing: Constants.smallSpacing) {
-//                    Image(systemName: exercisePlan.timerMode == .running ? "pause.fill" : "play.fill")
-                    Image(systemName: "pause.fill")
+                    Image(systemName: timerMode == .paused ? "pause.fill" : "play.fill")
                         .foregroundColor(.white)
-                        
-//                    Text(exercisePlan.timerMode == .running ? "Pause" : "Play")
-                        Text("Pause session")
+                    Text(timerMode == .paused ? "Pause" : "Play")
                         .foregroundColor(.white)
                 }
                 .padding(.vertical, Constants.mediumSpacing)
                 .frame(width: UIScreen.main.bounds.width/2   - Constants.veryLargeSpacing)
-                .background(Color("background8"))
+                .background(Constants.buttonColor)
                 .clipShape(Capsule())
                 .shadow(radius: 6)
             }
             
-            // Restart Button
-//            if exercisePlan.timerMode != .notRunning {
-                Button(action: {
-//                    exercisePlan.reset()
-                }) {
-                    HStack(spacing: Constants.smallSpacing) {
-                        Image(systemName: "arrow.clockwise")
-                            .foregroundColor(Color("background8"))
-                        Text("Restart session")
-                            .foregroundColor(Color("background8"))
-                    }
-                    .padding(.vertical, Constants.mediumSpacing)
-                    .frame(width: UIScreen.main.bounds.width/2 - Constants.veryLargeSpacing)
-                    .background(Capsule().stroke(Color("background8"), lineWidth: 2))
-                    .shadow(radius: 6)
-                }
-//            }
+//            // Restart Button
+//                Button(action: {
+//                    // sessionTimer.reset()
+//                }) {
+//                    HStack(spacing: Constants.smallSpacing) {
+//                        Image(systemName: "arrow.clockwise")
+//                            .foregroundColor(Constants.buttonColor)
+//                        Text("Restart session")
+//                            .foregroundColor(Constants.buttonColor)
+//                    }
+//                    .padding(.vertical, Constants.mediumSpacing)
+//                    .frame(width: UIScreen.main.bounds.width/2 - Constants.veryLargeSpacing)
+//                    .background(Capsule().stroke(Constants.buttonColor, lineWidth: 2))
+//                    .shadow(radius: 6)
+//                }
         }
         .padding(EdgeInsets(top: Constants.largeSpacing, leading: 0, bottom: Constants.largeSpacing, trailing: 0))
     }

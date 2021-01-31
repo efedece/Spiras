@@ -28,7 +28,7 @@ class RoutineData: ObservableObject {
             guard let data = try? Data(contentsOf: Self.fileURL) else {
                 #if DEBUG
                 DispatchQueue.main.async {
-                    self?.routines = SingleRoutine.data
+//                    self?.routines = SingleRoutine.data
                 }
                 #endif
                 return

@@ -17,37 +17,34 @@ struct RoutinesMenuView_Previews: PreviewProvider {
 
 struct RoutinesMenuView: View {
     @Binding var routines: [SingleRoutine]
-    @Environment(\.scenePhase) private var scenePhase
-    
-    @State private var isPresented = false
+    @State private var editMode: EditMode = .inactive
     @State private var newRoutineData = SingleRoutine.Data()
-    
+
     let saveAction: () -> Void
     
     var body: some View {
         List {
             ForEach(routines) { routine in
-                NavigationLink(destination: RoutineView(routine: binding(for: routine)))
+                NavigationLink(destination: RoutineView(routine: binding(for: routine)) { saveAction() })
                 {
-                    RoutinesMenuCardView(routine: routine)
+                    RoutinesMenuCardView(routine: binding(for: routine), routineTitle: routine.title, editMode: $editMode) { saveAction() }
                 }
-                .listRowBackground(Color("background5"))
+//                .foregroundColor(Color("3-Ultramarine Blue"))
+//                .listRowBackground(Color("1-Vivid Sky Blue"))
             }
-//            .onDelete { indexSet in
-//                indexSet.map { routines[$0] }.forEach { routine in
-//                    routines.remove(atOffsets: routine)
-//                }
-//            }
+            .onDelete { indexSet in
+                routines.remove(atOffsets: indexSet)
+                saveAction()
+            }
         }
-        .navigationTitle("Spiras Routines")
+        .navigationBarTitle("Spiras Routines",  displayMode: .inline)
         .navigationBarItems(
             leading:
                 Button(
                     action: {
-                        isPresented = true
                         let newRoutine = SingleRoutine(title: newRoutineData.title, breatheIn: newRoutineData.breatheIn, holdIn: newRoutineData.holdIn, breatheOut: newRoutineData.breatheOut, holdOut: newRoutineData.holdOut, cycleLength: newRoutineData.cycleLength, numberOfCycles: newRoutineData.numberOfCycles, sessionLength: newRoutineData.sessionLength, vibrationOn: newRoutineData.vibrationOn, soundOn: newRoutineData.soundOn)
                         routines.append(newRoutine)
-                        isPresented = false
+                        saveAction()
                     },
                     label: {
                         Image(systemName: "plus")
@@ -56,22 +53,7 @@ struct RoutinesMenuView: View {
             trailing:
                 EditButton()
         )
-        
-//        .sheet(isPresented: $isPresented) {
-//            NavigationView {
-//                EditView(routineData: $newRoutineData)
-//                    .navigationBarItems(leading: Button("Dismiss") {
-//                        isPresented = false
-//                    }, trailing: Button("Add") {
-//                        let newRoutine = SingleRoutine(title: newRoutineData.title, breatheIn: newRoutineData.breatheIn, holdIn: newRoutineData.holdIn, breatheOut: newRoutineData.breatheOut, holdOut: newRoutineData.holdOut, numberOfCycles: newRoutineData.numberOfCycles, vibrationOn: newRoutineData.vibrationOn, soundOn: newRoutineData.soundOn)
-//                        routines.append(newRoutine)
-//                        isPresented = false
-//                    })
-//            }
-//        }
-        .onChange(of: scenePhase) { phase in
-            if phase == .inactive { saveAction() }
-        }
+        .environment(\.editMode, $editMode)
         .environment(\.colorScheme, .dark)
     }
 

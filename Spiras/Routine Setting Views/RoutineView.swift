@@ -10,16 +10,15 @@ import SwiftUI
 struct RoutineView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            RoutineView(routine: .constant(SingleRoutine.data[0]))
+            RoutineView(routine: .constant(SingleRoutine.data[0]), saveAction: {})
         }
     }
 }
 
 struct RoutineView: View {
     @Binding var routine: SingleRoutine
-//    @State private var data: SingleRoutine.Data = SingleRoutine.Data()
-//    @StateObject var sessionTimer = SessionTimer()
-    @State var isRunning = false
+    let saveAction: () -> Void
+
     var body: some View {
         VStack(alignment: .center) {
             // Settings
@@ -29,19 +28,20 @@ struct RoutineView: View {
                 .multilineTextAlignment(.center)
                 .padding(.vertical, Constants.largeSpacing)
             
-            RoutineCycleSettingsView(breatheIn: $routine.breatheIn, holdIn: $routine.holdIn, breatheOut: $routine.breatheOut, holdOut: $routine.holdOut, cycleLength: $routine.cycleLength, numberOfCycles: $routine.numberOfCycles, sessionLength: $routine.sessionLength)
+            RoutineCycleSettingsView(breatheIn: $routine.breatheIn, holdIn: $routine.holdIn, breatheOut: $routine.breatheOut, holdOut: $routine.holdOut, cycleLength: $routine.cycleLength, numberOfCycles: $routine.numberOfCycles, sessionLength: $routine.sessionLength) { saveAction() }
                 .frame(width: UIScreen.main.bounds.width, height: Constants.settingsWheelHeight + Constants.veryLargeSpacing)
                 .padding(.vertical, Constants.mediumSpacing)
             
-            RoutineOtherSettingsView(breatheIn: $routine.breatheIn, holdIn: $routine.holdIn, breatheOut: $routine.breatheOut, holdOut: $routine.holdOut, cycleLength: $routine.cycleLength, numberOfCycles: $routine.numberOfCycles, sessionLength: $routine.sessionLength, vibrationOn: $routine.vibrationOn, soundOn: $routine.soundOn)
+            RoutineOtherSettingsView(breatheIn: $routine.breatheIn, holdIn: $routine.holdIn, breatheOut: $routine.breatheOut, holdOut: $routine.holdOut, cycleLength: $routine.cycleLength, numberOfCycles: $routine.numberOfCycles, sessionLength: $routine.sessionLength, vibrationOn: $routine.vibrationOn, soundOn: $routine.soundOn) { saveAction() }
                 .padding(.bottom, Constants.mediumSpacing)
             
             // Action Button
-            RoutineButtonsView(isRunning: $isRunning)
+            RoutineButtonsView(breatheIn: $routine.breatheIn, holdIn: $routine.holdIn, breatheOut: $routine.breatheOut, holdOut: $routine.holdOut, numberOfCycles: $routine.numberOfCycles, vibrationOn: $routine.vibrationOn, soundOn: $routine.soundOn)
         }
+        .navigationBarTitle("\(routine.title)",  displayMode: .inline)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(.black))
-        .padding(.bottom, Constants.veryLargeSpacing)
+        .edgesIgnoringSafeArea(.all)
+        .background(Color(UIColor.systemBackground))
         .environment(\.colorScheme, .dark)
     }
 }

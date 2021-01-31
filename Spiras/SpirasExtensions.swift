@@ -17,7 +17,7 @@ enum Constants {
     static let mediumFont: CGFloat = 15
     static let largeFont: CGFloat = 30
     static let superLargeFont: CGFloat = 50
-
+    
 // Spacing
     static let verySmallSpacing: CGFloat = 5
     static let smallSpacing: CGFloat = 10
@@ -31,6 +31,13 @@ enum Constants {
     static let settingsWheelHeight: CGFloat = 100
     static let timerCircleLineWidth: CGFloat = 35
     static let timerCircleDimensions: CGFloat = 280
+    
+// Colors
+    static let buttonColor = Color("2-Dodger Blue")
+    static let breatheInColor = Color("3-Ultramarine Blue")
+    static let holdInColor = Color("5-Magenta Blue")
+    static let breatheOutColor = Color("7-Purple")
+    static let holdOutColor = Color("9-Byzantine")
 }
 
 
@@ -64,6 +71,12 @@ func secondsToMinutesAndSeconds(_ seconds: Int) -> String {
 //        }
 //    }
 //}
+
+extension Color {
+    static let systemBackground = Color(UIColor.systemBackground)
+    static let secondarySystemBackground = Color(UIColor.secondarySystemBackground)
+    static let tertiarySystemBackground = Color(UIColor.tertiarySystemBackground)
+}
 
 extension String
 {
