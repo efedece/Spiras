@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65085D9825E2EF5C001AC382 /* FlowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65085D9625E2EF5C001AC382 /* FlowerView.swift */; };
+		65085D9925E2EF5C001AC382 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65085D9725E2EF5C001AC382 /* AnimationView.swift */; };
 		651376F7259D3AEE009735D1 /* bong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 651376F6259D3AEE009735D1 /* bong.wav */; };
 		6513B3FB2599578900E42E3C /* SessionButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6513B3FA2599578900E42E3C /* SessionButtonsView.swift */; };
 		6513B4022599653800E42E3C /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6513B4012599653800E42E3C /* SessionView.swift */; };
@@ -100,6 +102,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		65085D9625E2EF5C001AC382 /* FlowerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowerView.swift; sourceTree = "<group>"; };
+		65085D9725E2EF5C001AC382 /* AnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		651376F6259D3AEE009735D1 /* bong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bong.wav; sourceTree = "<group>"; };
 		651376FD259D3B22009735D1 /* om.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = om.flac; sourceTree = "<group>"; };
 		6513B3FA2599578900E42E3C /* SessionButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionButtonsView.swift; sourceTree = "<group>"; };
@@ -178,8 +182,10 @@
 			isa = PBXGroup;
 			children = (
 				6513B4012599653800E42E3C /* SessionView.swift */,
-				6513B3FA2599578900E42E3C /* SessionButtonsView.swift */,
+				65085D9725E2EF5C001AC382 /* AnimationView.swift */,
+				65085D9625E2EF5C001AC382 /* FlowerView.swift */,
 				6513B44A2599695D00E42E3C /* SessionCompletedView.swift */,
+				6513B3FA2599578900E42E3C /* SessionButtonsView.swift */,
 			);
 			path = "Session Views";
 			sourceTree = "<group>";
@@ -523,11 +529,13 @@
 			files = (
 				6513B44B2599695D00E42E3C /* SessionCompletedView.swift in Sources */,
 				65585F8D259972F5005F9E20 /* RoutineButtonsView.swift in Sources */,
+				65085D9925E2EF5C001AC382 /* AnimationView.swift in Sources */,
 				655745982596B270007E1468 /* RoutineView.swift in Sources */,
 				6557457525966381007E1468 /* SpirasExtensions.swift in Sources */,
 				6513B3FB2599578900E42E3C /* SessionButtonsView.swift in Sources */,
 				655C70E225965EA7008483B3 /* RoutineData.swift in Sources */,
 				6557456125965FFF007E1468 /* SingleRoutine.swift in Sources */,
+				65085D9825E2EF5C001AC382 /* FlowerView.swift in Sources */,
 				655744FB25965CF7007E1468 /* SpirasApp.swift in Sources */,
 				655745812596675E007E1468 /* RoutinesMenuCardView.swift in Sources */,
 				6513B4022599653800E42E3C /* SessionView.swift in Sources */,

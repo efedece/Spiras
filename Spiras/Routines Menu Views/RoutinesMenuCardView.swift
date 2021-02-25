@@ -9,7 +9,12 @@ import SwiftUI
 
 struct RoutineMenuCardView_Previews: PreviewProvider {
     static var previews: some View {
-        RoutinesMenuCardView(routine: .constant(SingleRoutine.data[0]), routineTitle: SingleRoutine.data[0].title, editMode: .constant(.inactive), saveAction: {})
+        RoutinesMenuCardView(
+            routine: .constant(SingleRoutine.data[0]),
+            routineTitle: SingleRoutine.data[0].title,
+            editMode: .constant(.inactive),
+            saveAction: {}
+        )
             .previewLayout(.fixed(width: UIScreen.main.bounds.width, height: 100))
     }
 }
@@ -64,7 +69,7 @@ struct RoutinesMenuCardView: View {
             .environment(\.editMode, $editMode)
         }
         .padding()
-//        .background(Color("1-Vivid Sky Blue"))
+//        .background(Constants.backgroundColor)
         .environment(\.colorScheme, .dark)        
     }
 }

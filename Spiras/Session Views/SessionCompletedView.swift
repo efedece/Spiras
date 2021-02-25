@@ -29,7 +29,7 @@ struct SessionCompletedView: View {
                 .foregroundColor(.white)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("1-Vivid Sky Blue"))
+        .background(Constants.backgroundColor)
         .edgesIgnoringSafeArea(.all)
         .onTapGesture {
             presentationMode.wrappedValue.dismiss()

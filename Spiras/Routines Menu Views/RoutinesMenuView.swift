@@ -10,7 +10,10 @@ import SwiftUI
 struct RoutinesMenuView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            RoutinesMenuView(routines: .constant(SingleRoutine.data), saveAction: {})
+            RoutinesMenuView(
+                routines: .constant(SingleRoutine.data),
+                saveAction: {}
+            )
         }
     }
 }
@@ -32,7 +35,7 @@ struct RoutinesMenuView: View {
                     // Build routine card
                     RoutinesMenuCardView(routine: binding(for: routine), routineTitle: routine.title, editMode: $editMode) { saveAction() }
                 }
-                .listRowBackground(Color("1-Vivid Sky Blue"))//Color.clear)
+                .listRowBackground(Constants.backgroundColor)//Color.clear)
             }
             // Remove routine on edits
             .onDelete { indexSet in
@@ -66,7 +69,7 @@ struct RoutinesMenuView: View {
             // Edit button on right
             trailing: EditButton().foregroundColor(.white) )
         .environment(\.editMode, $editMode)
-        .background(Color("1-Vivid Sky Blue"))
+        .background(Constants.backgroundColor)
             .edgesIgnoringSafeArea(.all)
     }
 

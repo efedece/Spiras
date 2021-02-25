@@ -9,7 +9,18 @@ import SwiftUI
 
 struct RoutineOtherSettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        RoutineOtherSettingsView(breatheIn: .constant(SingleRoutine.data[0].data.breatheIn), holdIn: .constant(SingleRoutine.data[0].data.holdIn), breatheOut: .constant(SingleRoutine.data[0].data.breatheOut), holdOut: .constant(SingleRoutine.data[0].data.holdOut),  cycleLength: .constant(SingleRoutine.data[0].data.cycleLength), numberOfCycles: .constant(SingleRoutine.data[0].data.numberOfCycles), sessionLength: .constant(SingleRoutine.data[0].data.sessionLength),vibrationOn: .constant(SingleRoutine.data[0].data.vibrationOn), soundOn: .constant(SingleRoutine.data[0].data.soundOn), saveAction: {})
+        RoutineOtherSettingsView(
+            breatheIn: .constant(SingleRoutine.data[0].data.breatheIn),
+            holdIn: .constant(SingleRoutine.data[0].data.holdIn),
+            breatheOut: .constant(SingleRoutine.data[0].data.breatheOut),
+            holdOut: .constant(SingleRoutine.data[0].data.holdOut),
+            cycleLength: .constant(SingleRoutine.data[0].data.cycleLength),
+            numberOfCycles: .constant(SingleRoutine.data[0].data.numberOfCycles),
+            sessionLength: .constant(SingleRoutine.data[0].data.sessionLength),
+            vibrationOn: .constant(SingleRoutine.data[0].data.vibrationOn),
+            soundOn: .constant(SingleRoutine.data[0].data.soundOn),
+            saveAction: {}
+        )
             .previewLayout(.fixed(width: .infinity, height: 200))
     }
 }

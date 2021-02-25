@@ -23,22 +23,21 @@ class SessionTimer: ObservableObject {
     private var cycleLength: Int
     private var numberOfCycles: Int
     private var sessionLength: Int
+    
     private var vibrationOn: Bool
     private var soundOn: Bool
 
     // Timer variables
     @Published var timer: Timer?
     @Published var timerState: TimerMode
-    @Published var secondsLeftSession: Double
-    @Published var secondsLeftStep: Double
     @Published var cyclesLeft: Int
+    @Published var sessionSecondsLeft: Double
+    @Published var cycleStepSecondsLeft: Double
     
     // Animation variables
-    var secondsStep: Double = 0
-    var cycleBarTo : CGFloat = 0
-    var cycleBarFrom: Bool = true
-    var cycleColor : Color = Color(.white)
-    var cycleStep: CycleStep = .breatheIn
+    var cycleStep: CycleStep
+    var cycleStepSeconds: Double = 0.0
+    var cycleStepColor : Color = Color(.white)
     
     var soundGenerator: AVPlayer { AVPlayer.sharedDingPlayer }
     let vibrationGenerator = UINotificationFeedbackGenerator()
@@ -49,18 +48,21 @@ class SessionTimer: ObservableObject {
         holdIn = 0
         breatheOut = 0
         holdOut = 0
-        numberOfCycles = 0
         cycleLength = breatheIn + holdIn + breatheOut + holdOut
+        numberOfCycles = 0
         sessionLength = cycleLength * numberOfCycles
-        secondsLeftSession = Double(sessionLength)
-        cyclesLeft = numberOfCycles
-        secondsStep = Double(breatheIn)
-        secondsLeftStep = Double(breatheIn)
+
         vibrationOn = false
         soundOn = false
-        cycleBarTo = 0
-        cycleBarFrom = true
-        cycleColor = Constants.breatheInColor
+
+        cyclesLeft = numberOfCycles
+        sessionSecondsLeft = Double(sessionLength)
+
+        cycleStep = .breatheIn
+        cycleStepSeconds = Double(breatheIn)
+        cycleStepSecondsLeft = Double(breatheIn)
+        cycleStepColor = Constants.breatheInColor
+        
         timerState = .notSet
     }
     
@@ -70,37 +72,37 @@ class SessionTimer: ObservableObject {
         self.holdIn = holdIn
         self.breatheOut = breatheOut
         self.holdOut = holdOut
-        self.numberOfCycles = numberOfCycles
         cycleLength = breatheIn + holdIn + breatheOut + holdOut
+        self.numberOfCycles = numberOfCycles
         sessionLength = cycleLength * numberOfCycles
-        secondsLeftSession = Double(sessionLength)
-        cyclesLeft = numberOfCycles
-        secondsStep = Double(breatheIn)
-        secondsLeftStep = Double(breatheIn)
+        
         self.vibrationOn = vibrationOn
         self.soundOn = soundOn
-        cycleBarTo = 0
-        cycleBarFrom = true
-        cycleColor = Constants.breatheInColor
-    }
+        
+        cyclesLeft = numberOfCycles
+        sessionSecondsLeft = Double(sessionLength)
+        
+        cycleStep = .breatheIn
+        cycleStepSeconds = Double(breatheIn)
+        cycleStepSecondsLeft = Double(breatheIn)
+        cycleStepColor = Constants.breatheInColor
+
+        timerState = .set
+}
     
     func run() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {
             [self] timer in
             RunLoop.current.add(timer, forMode: .common)
             timer.tolerance = 0.01
-            if secondsLeftSession.rounded(.up) == 0.00 {
+            if sessionSecondsLeft.rounded(.up) == 0.00 {
                 timerState = .finished
-                withAnimation(.default){ cycleBarTo = 0 }
-                timer.invalidate()
-//                self.reset()
+                reset()
             }
-            secondsLeftSession -= 0.01
-            secondsLeftStep -= 0.01
+            sessionSecondsLeft -= 0.01
+            cycleStepSecondsLeft -= 0.01
             
-            withAnimation(.default){
-                cycleBarTo = cycleBarFrom ? (1 - CGFloat(secondsLeftStep) / CGFloat(secondsStep)) : (CGFloat(secondsLeftStep) / CGFloat(secondsStep)) }
-            if secondsLeftStep.rounded(.up) == 0.0 {
+            if cycleStepSecondsLeft.rounded(.up) == 0.0 {
                 
                 if soundOn == true {
                     soundGenerator.seek(to: .zero)
@@ -112,45 +114,39 @@ class SessionTimer: ObservableObject {
                     vibrate()
                 }
                 
-                cycleBarFrom.toggle()
                 switch cycleStep {
                 case .breatheIn:
                     if holdIn != 0 {
-                        secondsStep = Double(holdIn)
-                        secondsLeftStep = Double(holdIn)
                         cycleStep = .holdIn
-                        cycleColor = Constants.holdInColor
+                        cycleStepSeconds = Double(holdIn)
+                        cycleStepColor = Constants.holdInColor
                     } else {
-                        secondsStep = Double(breatheOut)
-                        secondsLeftStep = Double(breatheOut)
                         cycleStep = .breatheOut
-                        cycleColor = Constants.breatheOutColor
+                        cycleStepSeconds = Double(breatheOut)
+                        cycleStepColor = Constants.breatheOutColor
                     }
                 case .holdIn:
-                    secondsStep = Double(breatheOut)
-                    secondsLeftStep = Double(breatheOut)
                     cycleStep = .breatheOut
-                    cycleColor = Constants.breatheOutColor
+                    cycleStepSeconds = Double(breatheOut)
+                    cycleStepColor = Constants.breatheOutColor
                 case .breatheOut:
                     if holdOut != 0 {
-                        secondsStep = Double(holdOut)
-                        secondsLeftStep = Double(holdOut)
                         cycleStep = .holdOut
-                        cycleColor = Constants.holdOutColor
+                        cycleStepSeconds = Double(holdOut)
+                        cycleStepColor = Constants.holdOutColor
                     } else {
-                        cyclesLeft -= 1
-                        secondsStep = Double(breatheIn)
-                        secondsLeftStep = Double(breatheIn)
                         cycleStep = .breatheIn
-                        cycleColor = Constants.breatheInColor
+                        cycleStepSeconds = Double(breatheIn)
+                        cycleStepColor = Constants.breatheInColor
+                        cyclesLeft -= 1
                     }
                 case .holdOut:
-                    cyclesLeft -= 1
-                    secondsStep = Double(breatheIn)
-                    secondsLeftStep = Double(breatheIn)
                     cycleStep = .breatheIn
-                    cycleColor = Constants.breatheInColor
+                    cycleStepSeconds = Double(breatheIn)
+                    cycleStepColor = Constants.breatheInColor
+                    cyclesLeft -= 1
                 }
+                cycleStepSecondsLeft = cycleStepSeconds
             }
         })
     }
@@ -160,15 +156,15 @@ class SessionTimer: ObservableObject {
     }
     
     func reset() {
-        timerState = .paused // FIXME: Correguir estado
-        secondsLeftSession = Double(sessionLength)
+
         cyclesLeft = Int(numberOfCycles)
-        secondsLeftStep = Double(breatheIn)
-        secondsStep  = Double(breatheIn)
+        sessionSecondsLeft = Double(sessionLength)
+        
         cycleStep = .breatheIn
-        cycleColor = Constants.breatheInColor
-        cycleBarFrom = true
-        withAnimation(.default){ cycleBarTo = 0 }
+        cycleStepSeconds  = Double(breatheIn)
+        cycleStepSecondsLeft = Double(breatheIn)
+        cycleStepColor = Constants.breatheInColor
+        
         timer?.invalidate()
     }
     
@@ -199,6 +195,7 @@ class SessionTimer: ObservableObject {
 // MARK: - Timer
 enum TimerMode {
     case notSet
+    case set
     case paused
     case running
     case finished

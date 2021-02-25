@@ -33,6 +33,7 @@ enum Constants {
     static let timerCircleDimensions: CGFloat = 280
     
 // Colors
+    static let backgroundColor = Color("1-Vivid Sky Blue")
     static let buttonColor = Color("2-Dodger Blue")
     static let breatheInColor = Color("3-Ultramarine Blue")
     static let holdInColor = Color("5-Magenta Blue")
@@ -53,6 +54,28 @@ func secondsToMinutesAndSeconds(_ seconds: Int) -> String {
 
     
 // MARK: - Extensions used
+
+extension AnyTransition {
+    static var blurFade: AnyTransition {
+        get {
+            AnyTransition.modifier(
+                active: BlurFadeModifier(isActive: true),
+                identity: BlurFadeModifier(isActive: false)
+            )
+        }
+    }
+}
+
+struct BlurFadeModifier: ViewModifier {
+    let isActive: Bool
+
+    func body(content: Content) -> some View {
+        content
+            .scaleEffect(isActive ? 1.5 : 1) // lagging behind effect
+            .blur(radius: isActive ? 8 : 0)
+            .opacity(isActive ? 0 : 0.7)
+    }
+}
 
 //extension Dictionary where Key == ExerciseManager, Value == String {
 //    var asPropertyList: [String:String] {

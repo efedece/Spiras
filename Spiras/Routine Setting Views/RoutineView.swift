@@ -10,7 +10,10 @@ import SwiftUI
 struct RoutineView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            RoutineView(routine: .constant(SingleRoutine.data[0]), saveAction: {})
+            RoutineView(
+                routine: .constant(SingleRoutine.data[0]),
+                saveAction: {}
+            )
         }
     }
 }
@@ -43,7 +46,7 @@ struct RoutineView: View {
         .navigationBarTitle("\(routine.title)",  displayMode: .inline)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .edgesIgnoringSafeArea(.all)
-        .background(Color("1-Vivid Sky Blue"))
+        .background(Constants.backgroundColor)
             .edgesIgnoringSafeArea(.all)
         .environment(\.colorScheme, .dark)
     }
